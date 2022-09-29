@@ -30,7 +30,7 @@ import 'firebase/compat/firestore';
 
 firebase.initializeApp(firebaseConfig);
 
-console.log(firebase);
+// console.log(firebase);
 
     /**
      * Handles the sign in button press.
@@ -82,13 +82,13 @@ console.log(firebase);
       }
       // Create user with email and pass.
       firebase.auth().createUserWithEmailAndPassword(email, password)
-        .then(function (user) {
-          console.log(user);
-  //If a user is successfully created with an appropriate email
-if (user != null){
-  user.user.sendEmailVerification();
-}
-        })
+//         .then(function (user) {
+//           console.log(user);
+//   //If a user is successfully created with an appropriate email
+// if (user != null){
+//   user.user.sendEmailVerification();
+// }
+//         })
         .catch(function (error) {
         // Handle Errors here.
         var errorCode = error.code;
@@ -107,8 +107,8 @@ if (user != null){
      */
     function sendEmailVerification() {
       firebase.auth().currentUser.sendEmailVerification().then(function () {
-        console.log("firebase.auth().currentUser");
-        console.log(firebase.auth().currentUser);
+        // console.log("firebase.auth().currentUser");
+        // console.log(firebase.auth().currentUser);
         // Email Verification sent!
         alert('Email Verification Sent!');
       });
